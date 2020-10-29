@@ -25,3 +25,7 @@ if __name__ == "__main__":
 for i in range(10):
     pyautogui.moveTo(230, 325)
     pyautogui.click()
+
+# for i in range(10):
+#     pyautogui.moveTo(240, 325)
+#     pyautogui.scroll(-100)
