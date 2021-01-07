@@ -1,2 +1,2 @@
-if __name__ == "__main__":
-#     send
+pyautogui.moveTo(143,1079)
+    pyautogui.click()
