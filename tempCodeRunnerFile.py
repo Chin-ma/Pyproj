@@ -1,2 +1,2 @@
-pyautogui.moveTo(143,1079)
-    pyautogui.click()
+llo':
+    #     txt.insert(END,"\n"+"BOT - Hi")
