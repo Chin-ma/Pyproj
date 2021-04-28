@@ -1,5 +1,6 @@
 import random
 import time
+from win10toast import ToastNotifier
 jokes = ["Alright! I took the quiz and it turns out I do put career over men.",
          "Yes, on a scale of one to 10, 10 being the dumbest a person can look, you are definitely 19",
          "I'm not great at advice. Can I interest you with a sarcastic comment?",
@@ -20,6 +21,18 @@ facts = ["Yawning Cools Your Brain",
 rps = ["rock","paper","scissor"]
 
 dice = ["1","2","3","4","5","6"]
+
+def notify():
+    notTime = input("Input time in 24hr format(HH:MM:SS) to set reminder")
+    notMessage = input("Enter your message: ")
+    while True:
+        current_time = time.strftime("%H:%M:%S")
+        if current_time == notTime:
+            print(current_time)
+            break
+    
+    notify = ToastNotifier()
+    notify.show_toast("Notification",notMessage)
 
 while True:
     message = input('Human: ')
@@ -44,8 +57,12 @@ while True:
             print("***You Win!!***")
     elif 'roll dice' in message or 'dice' in message or 'dice roll' in message:
         reply = random.choice(dice)
+    elif 'notify' in message or 'notify me' in message:
+        reply = str(notify())
     elif 'joke' in message:
         reply = random.choice(jokes)
+    elif 'exit' in message or 'stop' in message:
+        reply = exit(0)
     elif 'number guess' in message or 'guess game' in message or 'number game' in message or 'guess the number' in message:
         print("Think of a number between 1 and 10!")
         time.sleep(5)
